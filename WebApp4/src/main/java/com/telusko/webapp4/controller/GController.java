@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,11 +18,23 @@ public class GController {
     @Autowired
     private IGreetingService service;
 
-//    @GetMapping("/greet1")
+    //    @GetMapping("/greet1")
 //    public String getMeWishes(Map<String, Object> map) {
 //        map.put("wishes", "Happy Birthday");
 //        return "g1";
 //    }
+
+//    @PostMapping("/greet1")
+//    public String getMeWishPost(Map<String, Object> map) {
+//        map.put("g1", service.getGreeting("Matthew"));
+//        return "ctxpath";
+//    }
+
+    @GetMapping("/greet1")
+    public String getMeWishes(Map<String, Object> map) {
+        map.put("gct1", service.getGreeting("Mohammed"));
+        return "ctxpath";
+    }
 
     @GetMapping("/greet2")
     public void getGreeting(Map<String, Object> map) {
